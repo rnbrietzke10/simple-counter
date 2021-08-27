@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import Number from './Number';
 
 function App() {
 	const [number, setNumber] = useState(0);
