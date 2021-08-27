@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Number from './Number';
+import Buttons from './Buttons';
 
 function App() {
 	const [number, setNumber] = useState(0);
@@ -16,17 +17,8 @@ function App() {
 						<h1>Counter</h1>
 					</div>
 					<Number number={number} />
-					<div className="btn-container">
-						<div className="btn decrease" onClick={() => setNumber(number - 1)}>
-							DECREASE
-						</div>
-						<div className="btn reset" onClick={() => setNumber(0)}>
-							RESET
-						</div>
-						<div className="btn increase" onClick={() => setNumber(number + 1)}>
-							INCREASE
-						</div>
-					</div>
+
+					<Buttons number={number} setNumber={setNumber} />
 				</div>
 			</div>
 		</div>
