@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [number, setNumber] = useState(0);
+	let color = number < 0 ? 'red' : 'black';
+	const myStyle = {
+		color: color,
+	};
+	return (
+		<div className="App">
+			<div className="container">
+				<div className="main">
+					<div className="title">
+						<h1>Counter</h1>
+					</div>
+					<div className="number">
+						<h2 style={myStyle}>{number}</h2>
+					</div>
+
+					<div className="btn-container">
+						<div className="btn decrease" onClick={() => setNumber(number - 1)}>
+							DECREASE
+						</div>
+						<div className="btn reset" onClick={() => setNumber(0)}>
+							RESET
+						</div>
+						<div className="btn increase" onClick={() => setNumber(number + 1)}>
+							INCREASE
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 }
 
 export default App;
