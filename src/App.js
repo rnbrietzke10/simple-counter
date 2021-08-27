@@ -4,9 +4,13 @@ import Number from './Number';
 
 function App() {
 	const [number, setNumber] = useState(0);
+	let backgroundColor = number < 0 ? 'red' : 'white';
+	const backgroundStyle = {
+		backgroundColor: backgroundColor,
+	};
 	return (
 		<div className="App">
-			<div className="container">
+			<div className="container" style={backgroundStyle}>
 				<div className="main">
 					<div className="title">
 						<h1>Counter</h1>
