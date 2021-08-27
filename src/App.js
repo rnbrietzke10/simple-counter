@@ -4,10 +4,6 @@ import Number from './Number';
 
 function App() {
 	const [number, setNumber] = useState(0);
-	let color = number < 0 ? 'red' : 'black';
-	const myStyle = {
-		color: color,
-	};
 	return (
 		<div className="App">
 			<div className="container">
@@ -15,10 +11,7 @@ function App() {
 					<div className="title">
 						<h1>Counter</h1>
 					</div>
-					<div className="number">
-						<h2 style={myStyle}>{number}</h2>
-					</div>
-
+					<Number number={number} />
 					<div className="btn-container">
 						<div className="btn decrease" onClick={() => setNumber(number - 1)}>
 							DECREASE
